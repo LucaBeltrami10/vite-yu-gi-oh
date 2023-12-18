@@ -1,5 +1,5 @@
 <template lang="">
-    <div class=" my_card card border border-0 rounded-0">
+    <div class="my_card card border border-0 rounded-0">
         <img :src="imageSrc">
         <div class="card-body">
             <p class="name">{{name}}</p>
@@ -16,7 +16,6 @@ export default {
         'desc',
         'imageSrc',
         'archetype',
-
     ]
 
 }
