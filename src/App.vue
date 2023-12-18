@@ -6,11 +6,32 @@
 <script>
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
+import axios from 'axios';
+
 export default {
   components: {
     AppHeader,
     AppMain,
   },
+  data() {
+    return {
+      cardDataList: [],
+
+    }
+  },
+  methods: {
+    getCardArray() {
+      axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
+        .then((response) => {
+          this.cardDataList = response.data;
+          console.log(response.data)
+        })
+    }
+
+  },
+  created() {
+    this.getCardArray();
+  }
 
 }
 </script>
