@@ -1,1 +1,6 @@
-@use '../../node_modules/bootstrap/scss/bootstrap.scss'
+@use '../../node_modules/bootstrap/scss/bootstrap.scss';
+
+div.my_container {
+    width: 70%;
+    margin: 2rem auto;
+}
