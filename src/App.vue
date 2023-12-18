@@ -1,6 +1,6 @@
 <template>
   <AppHeader />
-  <AppMain />
+  <AppMain :cardDataList="cardDataList" />
 </template>
 
 <script>
