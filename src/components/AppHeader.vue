@@ -10,4 +10,12 @@ export default {
 
 }
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+header {
+    height: 100px;
+
+    img {
+        height: 100%;
+    }
+}
+</style>
