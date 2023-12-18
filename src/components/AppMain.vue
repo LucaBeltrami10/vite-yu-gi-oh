@@ -1,7 +1,13 @@
 <template>
     <main>
-        <div class="my_container">
-            <CardElement />
+        <div class="my_container container-fluid">
+            <div class="row">
+                <CardElement class="col-3 p-3" v-for="card in listCard" :key="card.id" :name="card.name" :type="card.type"
+                    :frameType="card.frameType" :desc="card.desc" :imageSrc="card.card_images[0].image_url"
+                    :archetype="card.archetype" />
+
+
+            </div>
 
         </div>
     </main>
@@ -11,7 +17,10 @@ import CardElement from './CardElement.vue';
 export default {
     components: {
         CardElement,
-    }
+    },
+    props: [
+        'listCard',
+    ],
 
 }
 </script>

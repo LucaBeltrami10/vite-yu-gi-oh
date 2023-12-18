@@ -1,6 +1,6 @@
 <template>
   <AppHeader />
-  <AppMain :cardDataList="cardDataList" />
+  <AppMain :listCard="cardDataList" />
 </template>
 
 <script>
@@ -23,8 +23,8 @@ export default {
     getCardArray() {
       axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
         .then((response) => {
-          this.cardDataList = response.data;
-          console.log(response.data)
+          this.cardDataList = response.data.data;
+          console.log(this.cardDataList)
         })
     }
 
