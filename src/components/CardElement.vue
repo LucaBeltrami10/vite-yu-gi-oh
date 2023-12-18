@@ -1,8 +1,8 @@
 <template lang="">
-    <div class="card">
+    <div class=" my_card card border border-0 rounded-0">
         <img :src="imageSrc">
         <div class="card-body">
-            <p class="card-text">{{name}}</p>
+            <p class="name">{{name}}</p>
             <p>{{archetype}}</p>
         </div>
     </div>
@@ -25,5 +25,14 @@ export default {
 @use '../style/partials/mixins' as *;
 @use '../style/partials/variables' as *;
 
-div.card {}
+div.my_card {
+    background-color: $background-card;
+
+    p.name {
+        color: white;
+        font-size: 0.9rem;
+        font-weight: 700;
+    }
+
+}
 </style>

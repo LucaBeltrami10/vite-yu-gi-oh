@@ -5,8 +5,6 @@
                 <CardElement class="col-3 p-3" v-for="card in listCard" :key="card.id" :name="card.name" :type="card.type"
                     :frameType="card.frameType" :desc="card.desc" :imageSrc="card.card_images[0].image_url"
                     :archetype="card.archetype" />
-
-
             </div>
 
         </div>
@@ -30,14 +28,13 @@ export default {
 
 main {
     background-color: $background-main;
-    height: 500px;
     width: 100%;
     padding: 1rem;
 
     div.my_container {
-        height: 400px;
         width: 70%;
         background-color: white;
+        padding: 3rem;
 
     }
 }
