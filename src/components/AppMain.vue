@@ -3,9 +3,7 @@
         <div class="my_dropdown-menu">
             <select class="form-select mt-3" aria-label="Default select example">
                 <option selected>Select Archetype</option>
-                <option value="1">Alien</option>
-                <option value="2">Noble Knight</option>
-                <option value="3">Noble Knight</option>
+                <option v-for="(archetype, index) in archetypesList" :value="index">{{ archetype.archetype_name }}</option>
             </select>
         </div>
         <div class="my_container d-flex flex-wrap">
