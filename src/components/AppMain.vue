@@ -1,7 +1,8 @@
 <template>
     <main>
         <div class="my_dropdown-menu">
-            <select @change="$emit('selectedArchetype')" class="form-select mt-3" aria-label="Default select example">
+            <select v-model="archetipoSelezionato" @change="$emit('selected', archetipoSelezionato), prova()"
+                class="form-select mt-3" aria-label="Default select example">
                 <option selected value="all">Select Archetype</option>
                 <option v-for="(archetype) in archetypesList" :value="archetype.archetype_name">{{
                     archetype.archetype_name }}
@@ -30,10 +31,14 @@ export default {
     ],
     data() {
         return {
+            archetipoSelezionato: '',
 
         }
     },
     methods: {
+        prova() {
+            console.log(this.archetipoSelezionato)
+        }
 
     }
 
