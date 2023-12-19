@@ -1,6 +1,6 @@
 <template>
   <AppHeader />
-  <AppMain :listCard="cardDataList" />
+  <AppMain :listCard="cardDataList" :archetypesList="archetypesList" />
 </template>
 
 <script>
