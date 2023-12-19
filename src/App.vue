@@ -26,6 +26,17 @@ export default {
           this.cardDataList = response.data.data;
           console.log(this.cardDataList)
         })
+    },
+    getArchetipe() {
+      axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php')
+        .then(function (response) {
+          // handle success
+          console.log(response);
+        })
+        .catch(function (error) {
+          // handle error
+          console.log(error);
+        })
     }
 
   },
