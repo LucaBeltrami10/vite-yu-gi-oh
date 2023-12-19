@@ -28,10 +28,9 @@ export default {
           console.log(this.cardDataList)
         })
     },
-    getArchetipe() {
+    getArchetypeArray() {
       axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php')
         .then(function (response) {
-          // handle success
           console.log(response);
         })
         .catch(function (error) {
@@ -43,6 +42,7 @@ export default {
   },
   created() {
     this.getCardArray();
+    this.getArchetypeArray();
   }
 
 }
