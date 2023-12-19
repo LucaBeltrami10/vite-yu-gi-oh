@@ -1,9 +1,11 @@
 <template>
     <main>
         <div class="my_dropdown-menu">
-            <select class="form-select mt-3" aria-label="Default select example">
-                <option selected>Select Archetype</option>
-                <option v-for="(archetype, index) in archetypesList" :value="index">{{ archetype.archetype_name }}</option>
+            <select @change="$emite('selectedArchetype')" class="form-select mt-3" aria-label="Default select example">
+                <option selected value="all">Select Archetype</option>
+                <option v-for="(archetype) in archetypesList" :value="archetype.archetype_name">{{
+                    archetype.archetype_name }}
+                </option>
             </select>
         </div>
         <div class="my_container d-flex flex-wrap">
@@ -26,6 +28,17 @@ export default {
         'listCard',
         'archetypesList',
     ],
+    data() {
+        return {
+
+        }
+    },
+    methods: {
+        selectedArchetype() {
+            console.log('archetipo cambiato')
+        }
+
+    }
 
 }
 </script>
