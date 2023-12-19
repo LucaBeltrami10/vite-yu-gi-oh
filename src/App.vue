@@ -1,6 +1,6 @@
 <template>
   <AppHeader />
-  <AppMain :listCard="cardDataList" :archetypesList="archetypesList" />
+  <AppMain :listCard="cardDataList" :archetypesList="archetypesList" @selectedArchetype="selectedArchetype()" />
 </template>
 
 <script>
@@ -38,6 +38,9 @@ export default {
           // handle error
           console.log(error);
         })
+    },
+    selectedArchetype() {
+      console.log('archetipo cambiato')
     }
 
   },
