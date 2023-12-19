@@ -30,8 +30,9 @@ export default {
     },
     getArchetypeArray() {
       axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php')
-        .then(function (response) {
-          console.log(response);
+        .then((response) => {
+          this.archetypesList = response.data
+          console.log(this.archetypesList)
         })
         .catch(function (error) {
           // handle error
