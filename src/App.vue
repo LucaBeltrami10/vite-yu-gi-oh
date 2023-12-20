@@ -1,7 +1,6 @@
 <template>
   <AppHeader />
-  <AppMain :listCard="cardDataList" :archetypesList="archetypesList"
-    @selected="selectedArchetype(), archetipoSelezionato" />
+  <AppMain :listCard="cardDataList" :archetypesList="archetypesList" @selected="selectedArchetype()" />
 </template>
 
 <script>
@@ -18,7 +17,7 @@ export default {
     return {
       cardDataList: [],
       archetypesList: [],
-      Archetype: '',
+      archetypeToFilter: '',
 
     }
   },
@@ -41,10 +40,10 @@ export default {
           console.log(error);
         })
     },
-    selectedArchetype(archetipoSelezionato) {
+    selectedArchetype(NewFilter) {
       console.log('archetipo cambiato')
-      this.Archetype == archetipoSelezionato
-      console.log(this.Archetype)
+      console.log(NewFilter)
+      this.archetypeToFilter == NewFilter
 
     }
 
