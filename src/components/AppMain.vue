@@ -1,10 +1,10 @@
 <template>
     <main>
         <div class="my_dropdown-menu">
-            <select v-model="archetypeToFilter" @change="$emit('selected', archetypeToFilter), prova()"
-                class="form-select mt-3" aria-label="Default select example">
-                <option selected value="all">Select Archetype</option>
-                <option v-for="(archetype) in archetypesList" :value="archetype.archetype_name">{{
+            <select v-model="archetypeToFilter" @change="$emit('selected', archetypeToFilter)" class="form-select mt-3"
+                aria-label="Default select example">
+                <option selected value="all">All Archetype</option>
+                <option v-for="archetype in archetypesList" :value="archetype.archetype_name">{{
                     archetype.archetype_name }}
                 </option>
             </select>
@@ -13,9 +13,10 @@
             <div class="w-100">
                 <p class="upper-main px-4 py-2 m-0">Found {{ listCard.length }} Cards</p>
             </div>
-            <CardElement class="my_element" v-for="card in listCard" :key="card.id" :name="card.name" :type="card.type"
-                :frameType="card.frameType" :desc="card.desc" :imageSrc="card.card_images[0].image_url"
-                :archetype="card.archetype" />
+            <!--   " -->
+            <CardElement class="my_element" v-for="card in listCard" v-show="elementToShow(card.archetype)" :key="card.id"
+                :name="card.name" :type="card.type" :frameType="card.frameType" :desc="card.desc"
+                :imageSrc="card.card_images[0].image_url" :archetype="card.archetype" />
         </div>
     </main>
 </template>
@@ -31,13 +32,21 @@ export default {
     ],
     data() {
         return {
-            archetypeToFilter: '',
+            archetypeToFilter: 'all',
 
         }
     },
     methods: {
-        prova() {
-            console.log(this.archetypeToFilter)
+        elementToShow(archetipeCard) {
+            if (this.archetypeToFilter == 'all') {
+                return true;
+            } else {
+                if (this.archetypeToFilter == archetipeCard) {
+                    return true
+                } else {
+                    return false
+                }
+            }
         }
 
     }
