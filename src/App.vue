@@ -29,6 +29,18 @@ export default {
           console.log(this.cardDataList)
         })
     },
+    /* getCardArray() {
+      axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
+        .then((response) => {
+          if (this.archetypeToFilter === 'all'){
+            return this.cardDataList = response.data.data;
+            console.log(this.cardDataList)
+          }else{
+            this.cardDataList = response.data.data
+          }
+            
+        })
+    }, */
     getArchetypeArray() {
       axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php')
         .then((response) => {
@@ -42,7 +54,7 @@ export default {
     },
     selectedArchetype(newFilter) {
       console.log('archetipo cambiato')
-      console.log(NewFilter)
+      console.log(newFilter)
       this.archetypeToFilter == newFilter
 
     }
